@@ -1,1 +1,1 @@
-from .api import WhatsminerAPI
+from .api import WhatsminerAccessToken, WhatsminerAPI
