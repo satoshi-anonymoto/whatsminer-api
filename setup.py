@@ -1,20 +1,13 @@
 from distutils.core import setup
-# read the contents of your README file
-from os import path
-
-this_directory = path.abspath(path.dirname(__file__))
-with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
-    long_description = f.read()
 
 
 setup(
   name = 'whatsminer',         # How you named your package folder (MyLib)
   packages = ['whatsminer'],   # Chose the same as "name"
-  version = '0.1.1',      # Start with a small number and increase it with every change you make
+  version = '0.1.2',      # Start with a small number and increase it with every change you make
   license='MIT',        # Choose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Unofficial python API for MicroBT Whatsminer ASICs',   # Give a short description about your library
-  long_description=long_description,
-  long_description_content_type="text/markdown",
+  long_description="See full README at https://github.com/satoshi-anonymoto/whatsminer-api",
   author = 'Satoshi Anonymoto',                   # Type in your name
   author_email = '',      # Type in your E-Mail
   url = 'https://github.com/satoshi-anonymoto/whatsminer-api',   # Provide either the link to your github or to your website

@@ -1,8 +1,7 @@
 # whatsminer-api
 Unofficial python api for MicroBT Whatsminer ASICs
 ---
-_Code adapted from a python file found in the Whatsminer Telegram group that is credited to `@passby`._
-
+_Code adapted from a python file found in the Whatsminer Telegram group that is credited to `@passby`_
 
 
 ## Installation
@@ -14,9 +13,10 @@ pip install whatsminer
 
 
 ## Basic Usage
-Instantiate a `WhatsminerAccessToken` for each ASIC that you want to access. Then make read-only or writeable API calls through `WhatsminerAPI`.
+Instantiate a `WhatsminerAccessToken` for each ASIC that you want to access. Then make read-only or writeable API calls through `WhatsminerAPI`
 
 Read-only information can be retrieved with just the ASIC's ip address:
+
 ```python
 from whatsminer import WhatsminerAccessToken, WhatsminerAPI
 
@@ -25,6 +25,7 @@ summary_json = WhatsminerAPI.get_read_only_info(access_token=token, cmd="summary
 ```
 
 The writeable API commands can be executed by providing the ASIC's admin password:
+
 ```python
 # The token from above can be enabled for writeable access:
 token.enable_write_access(admin_password="the_admin_password")
@@ -35,11 +36,12 @@ token = WhatsminerAccessToken(ip_address="192.168.1.100", admin_password="the_ad
 json_response = WhatsminerAPI.exec_command(access_token, cmd="power_off", additional_params={"respbefore": "true"})
 ```
 
-Writeable `WhatsminerAccessToken`s will renew themselves if they go past the API's 30min expiration.
+Writeable `WhatsminerAccessToken` objs will renew themselves if they go past the API's 30min expiration.
 
 
 ### Managing multiple ASICs
 You could define a whole server farm's worth of Whatsminer ASICs and manage them all in one script:
+
 ```python
 asics = [
     ('192.168.1.100', 'some_admin_pass'),
