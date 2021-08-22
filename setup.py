@@ -18,7 +18,7 @@ setup(
   author = 'Satoshi Anonymoto',                   # Type in your name
   author_email = '',      # Type in your E-Mail
   url = 'https://github.com/satoshi-anonymoto/whatsminer-api',   # Provide either the link to your github or to your website
-  download_url = 'https://github.com/satoshi-anonymoto/whatsminer-api/archive/refs/tags/0.1.0-beta01.tar.gz',
+  download_url = 'https://github.com/satoshi-anonymoto/whatsminer-api/archive/refs/tags/0.1.0.tar.gz',
   keywords = ['whatsminer', 'microbt', 'api'],   # Keywords that define your package best
   install_requires=[
           'passlib',
