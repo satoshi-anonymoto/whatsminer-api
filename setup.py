@@ -3,14 +3,14 @@ setup(
   name = 'whatsminer',         # How you named your package folder (MyLib)
   packages = ['whatsminer'],   # Chose the same as "name"
   version = '0.1.0',      # Start with a small number and increase it with every change you make
-  license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
+  license='MIT',        # Choose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Unofficial python API for MicroBT Whatsminer ASICs',   # Give a short description about your library
   author = 'Satoshi Anonymoto',                   # Type in your name
   author_email = '',      # Type in your E-Mail
   url = 'https://github.com/satoshi-anonymoto/whatsminer-api',   # Provide either the link to your github or to your website
-  download_url = 'https://github.com/satoshi-anonymoto/whatsminer-api/archive/v_01.tar.gz',    # I explain this later on
+  download_url = 'https://github.com/satoshi-anonymoto/whatsminer-api/archive/refs/tags/0.1.0-beta01.tar.gz',
   keywords = ['whatsminer', 'microbt', 'api'],   # Keywords that define your package best
-  install_requires=[            # I get to this in a second
+  install_requires=[
           'pycryptodome',
       ],
   classifiers=[
