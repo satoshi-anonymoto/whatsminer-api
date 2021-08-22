@@ -66,3 +66,12 @@ for token in tokens:
 It's very difficult to find any information about the Whatsminer API. This PDF documentation is slightly out of date but is the best source found so far:
 
 [WhatsminerAPIV1.3.8.pdf](docs/WhatsminerAPIV1.3.8.pdf)
+
+
+## Package distribution notes
+_There are just notes to self for updating the pypi distribution_
+* Update the release number in `setup.py` and commit to repo.
+* Draft a new release in github using the same release number.
+* Run `python setup.py sdist`
+* Publish the distribution to pypi: `twine upload dist/*`
+
