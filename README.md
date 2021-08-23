@@ -21,7 +21,8 @@ Read-only information can be retrieved with just the ASIC's ip address:
 from whatsminer import WhatsminerAccessToken, WhatsminerAPI
 
 token = WhatsminerAccessToken(ip_address="192.168.1.100")
-summary_json = WhatsminerAPI.get_read_only_info(access_token=token, cmd="summary")
+summary_json = WhatsminerAPI.get_read_only_info(access_token=token,
+                                                cmd="summary")
 ```
 
 The writeable API commands can be executed by providing the ASIC's admin password:
@@ -31,9 +32,12 @@ The writeable API commands can be executed by providing the ASIC's admin passwor
 token.enable_write_access(admin_password="the_admin_password")
 
 # Or you can directly instantiate a writeable one:
-token = WhatsminerAccessToken(ip_address="192.168.1.100", admin_password="the_admin_passwd")
+token = WhatsminerAccessToken(ip_address="192.168.1.100",
+                              admin_password="the_admin_passwd")
 
-json_response = WhatsminerAPI.exec_command(access_token, cmd="power_off", additional_params={"respbefore": "true"})
+json_response = WhatsminerAPI.exec_command(access_token=token, 
+                                           cmd="power_off",
+                                           additional_params={"respbefore": "true"})
 ```
 
 Writeable `WhatsminerAccessToken` objs will renew themselves if they go past the API's 30min expiration.
@@ -57,10 +61,10 @@ for asic_info in asics:
 
 # Find machines running too hot
 for token in tokens:
-    json_summary = WhatsminerAPI.get_read_only_info(token, cmd="summary")
+    json_summary = WhatsminerAPI.get_read_only_info(access_token=token, cmd="summary")
     if json_summary['SUMMARY'][0]['Temperature'] > 78.0:
         # stop mining on this ASIC
-        WhatsminerAPI.exec_command(access_token, cmd="power_off", additional_params={"respbefore": "true"})
+        WhatsminerAPI.exec_command(access_token=token, cmd="power_off", additional_params={"respbefore": "true"})
 ```
 
 
